@@ -76,12 +76,19 @@ function closeModal(modalId) {
   }
 }
 
-/* 작업기여도 박스 */
+/* 작업기여도 + 트러블 슈팅 토글 박스 */
 // 리스트 토글 (여러 개 추가 가능)
 function toggleList(listId) {
   const list = document.getElementById(listId);
+  if (!list) return; // 요소가 없을 경우 오류 방지
   list.style.display = list.style.display === "none" ? "block" : "none";
 }
+
+// 페이지 로드 시 특정 리스트 자동 활성화
+document.addEventListener("DOMContentLoaded", function () {
+  toggleList("idea1"); // 'idea1'이 자동으로 열리도록 설정
+  toggleList("idea4"); // 필요하면 추가 가능
+});
 
 /* 프로젝트 이미지를 띄우는 JS 함수 */
 // 팝업을 띄우는 함수
