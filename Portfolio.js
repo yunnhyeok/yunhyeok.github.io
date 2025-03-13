@@ -1,3 +1,19 @@
+// 가이드 탭 바!
+// AOS 초기화
+AOS.init();
+
+function showText(card) {
+  let text = card.nextElementSibling;
+  text.style.display = "block"; // 문구 표시
+
+  // 애니메이션 다시 적용
+  card.setAttribute("data-aos", "flip-left");
+  card.classList.remove("aos-animate");
+  setTimeout(() => {
+    card.classList.add("aos-animate");
+  }, 100);
+}
+
 function showCategory(categoryId) {
   // 모든 탭에서 active 클래스 제거
   const tabs = document.querySelectorAll(".skill-tab");
