@@ -1,6 +1,7 @@
 // 가이드 탭 바
-function flipCard(card) {
-  card.classList.toggle("flipped");
+function flipEffect() {
+  document.querySelector(".guide-card").classList.toggle("flipped");
+  document.querySelector(".guide-text").classList.toggle("flipped-text");
 }
 
 function showCategory(categoryId) {
