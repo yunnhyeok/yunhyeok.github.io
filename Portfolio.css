@@ -63,7 +63,7 @@ body {
 
 .guide-text {
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 0%;
   transform: translate(-50%, -50%);
   font-size: 14px;
@@ -392,7 +392,7 @@ body {
 
 .skill-name {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
 }
 
 .skill-icon-wrapper {
@@ -427,22 +427,23 @@ body {
 /*Language 부분에서 h2크기의 타이틀 ex_ HTML , CSS , JS 등등*/
 .Language-Title {
   color: #333;
-  transform: translateY(-40px) translateX(10px);
+  transform: translateY(-20px) translateX(15px);
 }
 
 .skill-message {
   font-size: 16px;
   color: #666;
   max-width: 400px; /* 글자의 길이에 상관없이 일정한 최대 너비 유지 */
-  transform: translateY(-80px) translateX(250px);
+  transform: translateY(-80px) translateX(290px);
 }
 
 .skill-bar {
-  width: 100%;
-  height: 20px;
+  width: 60%;
+  height: 10px;
   background-color: #e0e0e0;
   border-radius: 10px;
   overflow: hidden;
+  transform: translateY(10px) translateX(2em);
 }
 
 .skill-fill {
@@ -481,7 +482,7 @@ body {
 .project-tabs {
   margin: 20px;
   padding: 10px;
-  background: #fff9f9;
+  background: transparent;
   border-radius: 10px;
   display: inline-block;
   text-align: left;
@@ -826,7 +827,7 @@ img.close-icon {
   justify-content: center;
   align-items: center;
   height: 100vh; /* 전체 화면 높이 */
-  background-color: #f4f4f4;
+  background-color: transparent;
   color: #333;
   text-align: center;
 }
@@ -874,12 +875,12 @@ img.close-icon {
 
 /* 블로그 버튼 (초록색) */
 .blog {
-  background-color: #08a045;
+  background-color: #0a8f3e;
   color: white;
 }
 
 .blog:hover {
-  background-color: #0a8f3e;
+  background-color: #08a045;
 }
 
 /* 반응형 스타일 */
@@ -898,4 +899,25 @@ img.close-icon {
     width: 80%;
     text-align: center;
   }
+}
+
+@keyframes hoverEffect {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+.skill-item {
+  transform: scale(1); /* 기본 상태 */
+  opacity: 0.8; /* 기본 상태의 불투명도 */
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out; /* 마우스 아웃 시 천천히 돌아가도록 설정 */
+}
+
+.skill-item:hover {
+  animation: hoverEffect 0.5s ease-in-out forwards; /* hover 상태에서 애니메이션 진행 */
 }
